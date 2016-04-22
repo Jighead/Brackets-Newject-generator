@@ -12,7 +12,7 @@ define(function (require, exports, module) {
     
     
     // Function to run when the menu item is clicked
-    function NewJect_HTML() {
+    function InJector_HTML() {
           
       var editor = EditorManager.getCurrentFullEditor();
       if (editor) {
@@ -51,7 +51,7 @@ define(function (require, exports, module) {
  
     }
     /*jQuery @ CloudFlare CDN */
-    function NewJect_jquery(){
+    function InJector_jquery(){
       var editor = EditorManager.getCurrentFullEditor();
       if (editor) {
         var insertionPos = editor.getCursorPos();
@@ -65,7 +65,7 @@ define(function (require, exports, module) {
       } 
     }
     
-    function NewJect_bootstrapCSS(){
+    function InJector_bootstrapCSS(){
          var editor = EditorManager.getCurrentFullEditor();
          if (editor) {
             var insertionPos = editor.getCursorPos();
@@ -79,7 +79,7 @@ define(function (require, exports, module) {
          }
      }
     
-    function NewJect_bootstrapJS(){
+    function InJector_bootstrapJS(){
          var editor = EditorManager.getCurrentFullEditor();
          if (editor) {
             var insertionPos = editor.getCursorPos();
@@ -90,7 +90,7 @@ define(function (require, exports, module) {
          }
      }
     
-    function NewJect_AngularJS(){
+    function InJector_AngularJS(){
          var editor = EditorManager.getCurrentFullEditor();
          if (editor) {
             var insertionPos = editor.getCursorPos();
@@ -102,7 +102,7 @@ define(function (require, exports, module) {
      }
     
 
-      function NewJect_css(){
+      function InJector_css(){
        var editor = EditorManager.getCurrentFullEditor();
       if (editor) {
         var insertionPos = editor.getCursorPos();
@@ -118,44 +118,42 @@ define(function (require, exports, module) {
       } 
     }
     
-    function NewJect_about(){
-        var messageabout = 'NewJect Generator<br>'+'Description:HTML5,Jquery,CSS Standard Skeleton Generator for new Brackets documents<br>'+
-            'Author: <a title="http://facebook.com/hsmfawaz" href="http://facebook.com/hsmfawaz">Hisham fawaz</a><br>Website: <a title="http://extra-theme.com" href="http://extra-theme.com">Extra Theme</a><br>HomePage: <a title="https://github.com/extra-theme/Brackets-Newject-generator/" href="https://github.com/extra-theme/Brackets-Newject-generator/">Brackets-Newject-generator</a>';
+    function InJector_about(){
+        var messageabout = 'InJector Generator<br>'+'Description:Quick inject HTML5 starter or Jquery, Bootstrap, Angular and more into your Brackets documents<br>'+
+            'Author: Gerd Suhr <br>HomePage: <a title="https://github.com/Jighead/Brackets-InJector/" href="https://github.com/Jighead/Brackets-InJector/">Brackets-InJector</a>';
         Dialogs.showModalDialog('a',"About Extension",messageabout);
     }
 
-    var NewjectHTML = "htmlskeleton.newject";
-    CommandManager.register("HTML5", NewjectHTML, NewJect_HTML);
+    var ij_HTML = "htmlskeleton.quickject";
+    CommandManager.register("HTML5", ij_HTML, InJector_HTML);
     
-    var NewjectJQUERY = "jqueryskeleton.newject";
-    CommandManager.register("CloudFlare jQuery", NewjectJQUERY, NewJect_jquery);
+    var ij_JQUERY = "jqueryskeleton.quickject";
+    CommandManager.register("CloudFlare jQuery", ij_JQUERY, InJector_jquery);
     
-    var NewjectBOOTSTRAPcs = "boostrapcssskeleton.newject";
-    CommandManager.register("CloudFlare BootStrap CSS", NewjectBOOTSTRAPcs, NewJect_bootstrapCSS);
+    var ij_BOOTSTRAPcs = "boostrapcssskeleton.quickject";
+    CommandManager.register("CloudFlare BootStrap CSS", ij_BOOTSTRAPcs, InJector_bootstrapCSS);
     
-    var NewjectBOOTSTRAPjs = "bootstrapjsskeleton.newject";
-    CommandManager.register("CloudFlare BootStrap JS", NewjectBOOTSTRAPjs, NewJect_bootstrapJS);
+    var ij_BOOTSTRAPjs = "bootstrapjsskeleton.quickject";
+    CommandManager.register("CloudFlare BootStrap JS", ij_BOOTSTRAPjs, InJector_bootstrapJS);
     
-    var NewjectANGULARjs = "angularskeleton.newject";
-    CommandManager.register("CloudFlare Angular JS", NewjectANGULARjs, NewJect_AngularJS);
+    var ij_ANGULARjs = "angularskeleton.quickject";
+    CommandManager.register("CloudFlare Angular JS", ij_ANGULARjs, InJector_AngularJS);
     
-    var NewjectCSS = "cssskeleton.newject";
-    CommandManager.register("CSS Reset", NewjectCSS, NewJect_css);
+    var ij_CSS = "cssskeleton.quickject";
+    CommandManager.register("CSS Reset", ij_CSS, InJector_css);
 
-    var Newjectabout = "about.newject";
-    CommandManager.register("About Extension", Newjectabout, NewJect_about);
+    var ij_about = "about.quickject";
+    CommandManager.register("About Extension", ij_about, InJector_about);
 
-    Menus.addMenu('NewJect','newject.main');
-    var menu = Menus.getMenu('newject.main');
-    menu.addMenuItem(NewjectHTML);
-    menu.addMenuItem(NewjectJQUERY);
-    menu.addMenuItem(NewjectBOOTSTRAPcs);
-    menu.addMenuItem(NewjectBOOTSTRAPjs);
-    menu.addMenuItem(NewjectANGULARjs);
-    menu.addMenuItem(NewjectCSS);
+    Menus.addMenu('InJector','quickject.main');
+    var menu = Menus.getMenu('quickject.main');
+    menu.addMenuItem(ij_HTML);
+    menu.addMenuItem(ij_JQUERY);
+    menu.addMenuItem(ij_BOOTSTRAPcs);
+    menu.addMenuItem(ij_BOOTSTRAPjs);
+    menu.addMenuItem(ij_ANGULARjs);
+    menu.addMenuItem(ij_CSS);
     menu.addMenuDivider();
-    menu.addMenuItem(Newjectabout);
+    menu.addMenuItem(ij_about);
     
-
-
 });
